@@ -21,9 +21,10 @@ SimpleCov.start
 DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
 
 
+
 Capybara.app = RushHour::Server
 
-class FeatureTest < Minitest::Test
-  include Capybara::DSL
-  include TestHelpers
-end
+# class FeatureTest < Minitest::Test
+#   include Capybara::DSL
+#   include TestHelpers
+# end

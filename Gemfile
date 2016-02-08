@@ -5,6 +5,10 @@ gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'rake'
+gem 'simplecov'
+gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'coveralls', require: false
+gem 'database_cleaner'
 
 group :development, :test do
   gem 'shotgun'
