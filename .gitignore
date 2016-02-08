@@ -1,1 +1,4 @@
 capybara*.html
+#simplecov generated
+coverage
+coverage.data
