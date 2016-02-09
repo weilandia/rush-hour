@@ -62,17 +62,9 @@
 <row name="ip" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="id_browser" null="1" autoincrement="0">
+<row name="id_user_agent" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="browser" row="id" />
-</row>
-<row name="id_platform" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="platform" row="id" />
-</row>
-<row name="id_browser_version" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="browser version" row="id" />
+<default>NULL</default><relation table="user_agents" row="id" />
 </row>
 <row name="id_events" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -80,13 +72,17 @@
 </row>
 <row name="id_resolution" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="resolution" row="id" />
+<default>NULL</default><relation table="resolutions" row="id" />
+</row>
+<row name="id_request types" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="request_types" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="330" y="188" name="browser">
+<table x="330" y="188" name="user_agents">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -94,7 +90,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="326" y="277" name="platform">
+<table x="332" y="257" name="events">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -102,23 +98,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="323" y="347" name="browser version">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="324" y="418" name="events">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="324" y="483" name="resolution">
+<table x="334" y="326" name="resolutions">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -126,6 +106,14 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="resolution height" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="336" y="443" name="request_types">
+<row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
