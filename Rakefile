@@ -3,8 +3,6 @@ Bundler.require
 
 require 'sinatra/activerecord/rake'
 require 'rake/testtask'
-require 'bundler/gem_tasks'
-Bundler::GemHelper.install_tasks
 
 task default: [:deftask]
 task :deftask do
