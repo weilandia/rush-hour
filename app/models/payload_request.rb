@@ -15,9 +15,17 @@ class PayloadRequest < ActiveRecord::Base
   validates :user_agent_id, presence: true
 
   def self.avg_response_time
-    #responded in
     average("respondedIn")
   end
+
+  def self.max_response_time
+    maximum("respondedIn")
+  end
+
+  def self.min_response_time
+    minimum("respondedIn")
+  end
+
 
 end
 

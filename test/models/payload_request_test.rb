@@ -121,4 +121,38 @@ class PayloadRequestTest < Minitest::Test
     assert_equal 50, PayloadRequest.avg_response_time.to_f
   end
 
+  def test_max_response_time
+    payload2 = {
+      "url":"http://jumpstartlab.com/blog",
+      "requestedAt":"2013-02-16 21:38:28 -0700",
+      "respondedIn":63,
+      "referredBy":"http://jumpstartlab.com",
+      "parameters":[],
+      "ip":"63.29.38.211",
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+    PayloadRequest.create(payload2)
+    assert_equal 63, PayloadRequest.max_response_time
+  end
+
+  def test_min_response_time
+    payload2 = {
+      "url":"http://jumpstartlab.com/blog",
+      "requestedAt":"2013-02-16 21:38:28 -0700",
+      "respondedIn":63,
+      "referredBy":"http://jumpstartlab.com",
+      "parameters":[],
+      "ip":"63.29.38.211",
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+    PayloadRequest.create(payload2)
+    assert_equal 37, PayloadRequest.min_response_time
+  end
+
 end

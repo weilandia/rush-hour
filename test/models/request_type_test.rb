@@ -15,4 +15,12 @@ class RequestTypeTest < Minitest::Test
     assert_equal @request_type.request_type, RequestType.find(@request_type.id).request_type
   end
 
+  def test_top_request_type
+    request_type2 = RequestType.create({request_type: "GET"})
+    request_type3 = RequestType.create({request_type: "POST"})
+    # require 'pry'
+    # binding.pry
+    assert_equal "GET", RequestType.top_request_type
+  end
+
 end
