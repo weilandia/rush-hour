@@ -1,6 +1,7 @@
 require_relative "../test_helper"
 
 class PayloadRequestTest < Minitest::Test
+  include TestHelpers
 
   def setup
     @resolution = Resolution.create({resolution_width: "1920", resolution_height: "1280"})
@@ -9,9 +10,7 @@ class PayloadRequestTest < Minitest::Test
 
     @event = Event.create({event: "socialLogin"})
 
-    @browser = Browser.create({browser: "Chrome"})
-
-    @platform = Platform.create({platform: "Macintosh"})
+    @user_agent = UserAgent.create({browser: "Chrome", platform: "Macintosh"})
 
     @payload = {
       "url":"http://jumpstartlab.com/blog",
@@ -22,8 +21,7 @@ class PayloadRequestTest < Minitest::Test
       "ip":"63.29.38.211",
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "browser_id": @browser.id,
-      "platform_id": @platform.id,
+      "user_agent_id": @user_agent.id,
       "resolution_id": @resolution.id
     }
 
@@ -98,11 +96,29 @@ class PayloadRequestTest < Minitest::Test
       "ip":"63.29.38.211",
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "browser_id": @browser.id,
-      "platform_id": @platform.id,
+      "user_agent_id": @user_agent.id,
       "resolution_id": @resolution.id
     }
-
     assert PayloadRequest.create(payload).valid?
   end
+
+  def test_average_response_time
+    payload2 = {
+      "url":"http://jumpstartlab.com/blog",
+      "requestedAt":"2013-02-16 21:38:28 -0700",
+      "respondedIn":63,
+      "referredBy":"http://jumpstartlab.com",
+      "parameters":[],
+      "ip":"63.29.38.211",
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+    PayloadRequest.create(payload2)
+    # require 'pry'
+    # binding.pry
+    assert_equal 50, PayloadRequest.avg_response_time.to_f
+  end
+
 end

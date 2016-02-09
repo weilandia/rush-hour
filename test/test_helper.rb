@@ -10,6 +10,7 @@ require 'capybara/dsl'
 require 'codeclimate-test-reporter'
 require 'simplecov'
 require 'coveralls'
+require 'database_cleaner'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   Coveralls::SimpleCov::Formatter,
@@ -18,7 +19,20 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
+module TestHelpers
+
+  DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
+
+  def setup
+    DatabaseCleaner.start
+  end
+
+  def teardown
+    DatabaseCleaner.clean
+    super
+  end
+
+end
 
 
 

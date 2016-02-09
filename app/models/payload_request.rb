@@ -1,7 +1,6 @@
 class PayloadRequest < ActiveRecord::Base
-  belongs_to :browser
+  belongs_to :user_agent
   belongs_to :event
-  belongs_to :platform
   belongs_to :request_type
   belongs_to :resolution
 
@@ -13,4 +12,23 @@ class PayloadRequest < ActiveRecord::Base
   validates :event_id, presence: true
   validates :resolution_id, presence: true
   validates :ip, presence: true
+  validates :user_agent_id, presence: true
+
+  def self.avg_response_time
+    #responded in
+    average("respondedIn")
+  end
+
 end
+
+
+
+# Average Response time for our clients app across all requests
+# Max Response time across all requests
+# Min Response time across all requests
+# Most frequent request type
+# List of all HTTP verbs used
+# List of URLs listed form most requested to least requested
+# Web browser breakdown across all requests(userAgent)
+# OS breakdown across all requests(userAgent)
+# Screen Resolutions across all requests (resolutionWidth x resolutionHeight)
