@@ -26,7 +26,33 @@ class PayloadRequest < ActiveRecord::Base
     minimum("respondedIn")
   end
 
+  def self.urls_ordered_by_requested
+    group("url").count.map {|k, v| k}
+  end
 
+#url specific
+  def self.url_max_response_time(url)
+    where(url: url).maximum("respondedIn")
+  end
+
+  def self.url_min_response_time(url)
+    where(url: url).minimum("respondedIn")
+  end
+
+#Ask client what response is needed
+  def self.url_response_times_ordered(url)
+    where(url: url).sort_by(&:respondedIn).reverse
+  end
+
+  def self.url_avg_response_time(url)
+    where(url: url).average("respondedIn")
+  end
+
+  def self.url_associated_verbs(url)
+    where(url: url).map do |p|
+      RequestType.find_by(id: p.id).request_type
+    end.uniq
+  end
 end
 
 

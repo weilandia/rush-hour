@@ -2,7 +2,7 @@ require_relative "../test_helper"
 
 class ResolutionTest < Minitest::Test
   include TestHelpers
-  
+
   def setup
     @resolution = Resolution.create({resolution_width: "1920", resolution_height: "1280"})
   end
@@ -17,6 +17,16 @@ class ResolutionTest < Minitest::Test
 
   def test_resolution_height
     assert_equal @resolution.resolution_height, Resolution.find(@resolution.id).resolution_height
+  end
+
+  def test_user_agent_browser_breakdown
+    Resolution.create({resolution_width: "900", resolution_height: "700"})
+
+    Resolution.create({resolution_width: "200", resolution_height: "300"})
+
+    hash = {["900", "700"]=>1, ["1920", "1280"]=>1, ["200", "300"]=>1}
+
+    assert_equal hash, Resolution.resolution_breakdown
   end
 
 end
