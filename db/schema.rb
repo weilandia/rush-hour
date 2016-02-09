@@ -11,25 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208233924) do
+ActiveRecord::Schema.define(version: 20160209161320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "browsers", force: :cascade do |t|
+    t.string "browser"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "event"
+  end
+
   create_table "payload_requests", force: :cascade do |t|
+    t.string   "ip"
     t.string   "url"
     t.string   "referredBy"
-    t.string   "requestType"
     t.string   "parameters"
-    t.string   "eventName"
-    t.string   "userAgent"
-    t.string   "resolutionWidth"
-    t.string   "resolutionHeight"
-    t.string   "ip"
     t.integer  "respondedIn"
     t.datetime "requestedAt"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "userAgent"
+    t.string   "resolution_id"
+    t.string   "request_type_id"
+    t.string   "event_id"
+    t.string   "browser_id"
+    t.string   "platform_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string "platform"
+  end
+
+  create_table "request_types", force: :cascade do |t|
+    t.string "request_type"
+  end
+
+  create_table "resolutions", force: :cascade do |t|
+    t.string "resolution_width"
+    t.string "resolution_height"
   end
 
 end

@@ -3,18 +3,28 @@ require_relative "../test_helper"
 class PayloadRequestTest < Minitest::Test
 
   def setup
+    @resolution = Resolution.create({resolution_width: "1920", resolution_height: "1280"})
+
+    @request_type = RequestType.create({request_type: "GET"})
+
+    @event = Event.create({event: "socialLogin"})
+
+    @browser = Browser.create({browser: "Chrome"})
+
+    @platform = Platform.create({platform: "Macintosh"})
+
     @payload = {
       "url":"http://jumpstartlab.com/blog",
       "requestedAt":"2013-02-16 21:38:28 -0700",
       "respondedIn":37,
       "referredBy":"http://jumpstartlab.com",
-      "requestType":"GET",
       "parameters":[],
-      "eventName": "socialLogin",
-      "userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1309.0 Safari/537.17",
-      "resolutionWidth":"1920",
-      "resolutionHeight":"1280",
-      "ip":"63.29.38.211"
+      "ip":"63.29.38.211",
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "browser_id": @browser.id,
+      "platform_id": @platform.id,
+      "resolution_id": @resolution.id
     }
 
     @payload_request = PayloadRequest.create(@payload)
@@ -41,8 +51,8 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_payload_request_type
-    assert_equal "GET",
-    PayloadRequest.find(@payload_request.id).requestType
+    assert_equal @request_type.id,
+    PayloadRequest.find(@payload_request.id).request_type_id.to_i
   end
 
   def test_payload_parameters
@@ -51,23 +61,13 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_payload_social_login
-    assert_equal "socialLogin",
-    PayloadRequest.find(@payload_request.id).eventName
-  end
-
-  def test_payload_user_agent
-    assert_equal "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1309.0 Safari/537.17",
-    PayloadRequest.find(@payload_request.id).userAgent
+    assert_equal @event.id,
+    PayloadRequest.find(@payload_request.id).event_id.to_i
   end
 
   def test_payload_resolution_width
-    assert_equal "1920",
-    PayloadRequest.find(@payload_request.id).resolutionWidth
-  end
-
-  def test_payload_resolution_heigh
-    assert_equal "1280",
-    PayloadRequest.find(@payload_request.id).resolutionHeight
+    assert_equal @resolution.id,
+    PayloadRequest.find(@payload_request.id).resolution_id.to_i
   end
 
   def test_payload_ip
@@ -94,13 +94,13 @@ class PayloadRequestTest < Minitest::Test
       "requestedAt":"2013-02-16 21:38:28 -0700",
       "respondedIn":37,
       "referredBy":"http://jumpstartlab.com",
-      "requestType":"GET",
       "parameters":[],
-      "eventName": "socialLogin",
-      "userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1309.0 Safari/537.17",
-      "resolutionWidth":"1920",
-      "resolutionHeight":"1280",
-      "ip":"63.29.38.211"
+      "ip":"63.29.38.211",
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "browser_id": @browser.id,
+      "platform_id": @platform.id,
+      "resolution_id": @resolution.id
     }
 
     assert PayloadRequest.create(payload).valid?
