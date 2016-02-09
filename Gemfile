@@ -5,6 +5,7 @@ gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'rake'
+gem 'pry'
 gem 'simplecov'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'coveralls', require: false
