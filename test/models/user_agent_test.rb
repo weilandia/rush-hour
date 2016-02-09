@@ -24,9 +24,9 @@ class UserAgentTest < Minitest::Test
 
     UserAgent.create({browser: "Pearl", platform: "Macintosh"})
 
-    hash = {"Chrome"=>1, "Pearl"=>1, "Safari"=>1}
+    result = {"Chrome"=>1, "Pearl"=>1, "Safari"=>1}
 
-    assert_equal hash, UserAgent.browser_breakdown
+    assert_equal result, UserAgent.browser_breakdown
   end
 
   def test_user_agent_browser_breakdown
@@ -34,8 +34,8 @@ class UserAgentTest < Minitest::Test
 
     UserAgent.create({browser: "Pearl", platform: "Windows"})
 
-    hash = {"Linux"=>1, "Windows"=>1, "Macintosh"=>1}
+    result = {"Linux"=>1, "Windows"=>1, "Macintosh"=>1}
 
-    assert_equal hash, UserAgent.platform_breakdown
+    assert_equal result, UserAgent.platform_breakdown
   end
 end

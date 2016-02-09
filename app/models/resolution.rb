@@ -1,8 +1,18 @@
 class Resolution < ActiveRecord::Base
   has_many :payload_requests
 
-  def self.resolution_breakdown
-    group(["resolution_width", "resolution_height"]).count
+  def self.breakdown
+    group(["width", "height"]).count
   end
 
 end
+
+# class ClientPresenter
+#   def initialize(client)
+#     @client = client
+#   end
+#
+#   def resolution_breakdown
+#     @client.resolutions.breakdown.map { |}
+#   end
+# end

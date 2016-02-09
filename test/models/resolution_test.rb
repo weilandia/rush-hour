@@ -16,7 +16,7 @@ class ResolutionTest < Minitest::Test
   end
 
   def test_resolution_height
-    assert_equal @resolution.resolution_height, Resolution.find(@resolution.id).resolution_height
+    assert_equal "1280", @resolution.resolution_height
   end
 
   def test_user_agent_browser_breakdown
