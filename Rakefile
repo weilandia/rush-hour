@@ -4,10 +4,7 @@ Bundler.require
 require 'sinatra/activerecord/rake'
 require 'rake/testtask'
 
-task default: [:deftask]
-task :deftask do
-  puts 'call rake -T'
-end
+task :default => [:test]
 
 Rake::TestTask.new do |t|
   t.libs << "test"
