@@ -16,10 +16,9 @@ class RequestTypeTest < Minitest::Test
   end
 
   def test_top_request_type
-    request_type2 = RequestType.create({request_type: "GET"})
-    request_type3 = RequestType.create({request_type: "POST"})
-    # require 'pry'
-    # binding.pry
+    RequestType.create({request_type: "GET"})
+    RequestType.create({request_type: "POST"})
+
     assert_equal "GET", RequestType.top_request_type
   end
 
