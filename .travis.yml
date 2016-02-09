@@ -3,8 +3,9 @@ rvm:
   - 2.2.2
 services:
 - postgresql
+env:
+  - RACK_ENV=test
 before_script:
-  - cp config/database.yml.travis config/database.yml
   - psql -c 'create database rush-hour-test' -U postgres
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
