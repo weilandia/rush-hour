@@ -4,11 +4,6 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
-gem 'rake'
-gem 'pry'
-gem 'simplecov'
-gem "codeclimate-test-reporter", group: :test, require: nil
-gem 'coveralls', require: false
 
 group :development, :test do
   gem 'shotgun'
@@ -18,4 +13,9 @@ group :development, :test do
   gem 'launchy'
   gem 'rack-test'
   gem 'database_cleaner'
+  gem 'rake'
+  gem 'simplecov'
+  gem 'pry'
+  gem "codeclimate-test-reporter", group: :test, require: nil
+  gem 'coveralls', require: false
 end
