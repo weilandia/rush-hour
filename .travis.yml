@@ -6,4 +6,4 @@ services:
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
-cache: bundler
+# cache: bundler
