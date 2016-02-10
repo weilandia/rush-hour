@@ -81,4 +81,9 @@ class PayloadRequestTest < Minitest::Test
     assert_equal expected, PayloadRequest.urls_ordered_by_requested
   end
 
+  def test_events_ordered_by_count
+    expected = {"socialLogin"=>4, "newsBreaks"=>3, "tweet"=>2, "no event"=>1}
+    assert_equal expected, PayloadRequest.events
+  end
+
 end

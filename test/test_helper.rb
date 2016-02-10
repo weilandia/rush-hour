@@ -38,8 +38,13 @@ module PayloadTestData
     @request_type = RequestType.create({verb: "GET"})
 
     @event = Event.create({name: "socialLogin"})
+    @event2 = Event.create({name: "newsBreaks"})
+    @event3 = Event.create({name: "tweet"})
 
     @user_agent = UserAgent.create({browser: "Chrome", platform: "Macintosh"})
+    @user_agent2 = UserAgent.create({browser: "Safari", platform: "Macintosh"})
+    @user_agent3 = UserAgent.create({browser: "Mozilla", platform: "Windows"})
+    @user_agent4  = UserAgent.create({browser: "Chrome", platform: "Windows"})
 
     @url_1 = Url.create({path: "http://jumpstartlab.com/blog"})
     @url_2 = Url.create({path: "http://jumpstartlab.com/exam"})
@@ -81,7 +86,7 @@ module PayloadTestData
       "ip":"63.29.38.211",
       "url_id": @url_2.id,
       "referral_id": @referral_3.id,
-      "event_id": @event.id,
+      "event_id": @event2.id,
       "request_type_id": @request_type.id,
       "user_agent_id": @user_agent.id,
       "resolution_id": @resolution.id
@@ -94,8 +99,8 @@ module PayloadTestData
       "referral_id": @referral_3.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
-      "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "event_id": @event2.id,
+      "user_agent_id": @user_agent2.id,
       "resolution_id": @resolution.id
     }
 
@@ -106,8 +111,8 @@ module PayloadTestData
       "referral_id": @referral_5.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
-      "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "event_id": @event2.id,
+      "user_agent_id": @user_agent2.id,
       "resolution_id": @resolution.id
     }
 
@@ -119,7 +124,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "user_agent_id": @user_agent2.id,
       "resolution_id": @resolution.id
     }
 
@@ -131,7 +136,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "user_agent_id": @user_agent3.id,
       "resolution_id": @resolution.id
     }
 
@@ -142,8 +147,7 @@ module PayloadTestData
       "referral_id": @referral_4.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
-      "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "user_agent_id": @user_agent4.id,
       "resolution_id": @resolution.id
     }
 
@@ -154,8 +158,8 @@ module PayloadTestData
       "referral_id": @referral_5.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
-      "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "event_id": @event3.id,
+      "user_agent_id": @user_agent4.id,
       "resolution_id": @resolution.id
     }
 
@@ -166,8 +170,8 @@ module PayloadTestData
       "referral_id": @referral_5.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
-      "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "event_id": @event3.id,
+      "user_agent_id": @user_agent4.id,
       "resolution_id": @resolution.id
     }
 

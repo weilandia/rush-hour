@@ -34,7 +34,7 @@ class UrlTest < Minitest::Test
     assert_equal [["http://jumpstartlab.com/4", 3], ["http://jumpstartlab.com/3", 2], ["http://jumpstartlab.com/2", 2]], @url_1.top_three_referrers
   end
 
+  def test_top_three_user_agents
+    assert_equal [[["Safari", "Macintosh"], 3], [["Chrome", "Windows"], 3], [["Chrome", "Macintosh"], 2]], @url_1.top_three_user_agents
+  end
 end
-
-# Three most popular referrers
-# Three most popular user agents

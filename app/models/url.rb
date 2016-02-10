@@ -31,7 +31,7 @@ class Url < ActiveRecord::Base
   end
 
   def top_three_user_agents
-
+    user_agents.group(["browser", "platform"]).order(count: :desc).count.take(3)
   end
 
 end

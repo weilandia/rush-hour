@@ -22,7 +22,7 @@ class UserAgentTest < Minitest::Test
 
     UserAgent.create({browser: "Pearl", platform: "Macintosh"})
 
-    expected = {"Chrome"=>1, "Pearl"=>1, "Safari"=>1}
+    expected = {"Chrome"=>2, "Pearl"=>1, "Mozilla"=>1, "Safari"=>2}
 
     assert_equal expected, UserAgent.browser_breakdown
   end
@@ -32,7 +32,7 @@ class UserAgentTest < Minitest::Test
 
     UserAgent.create({browser: "Pearl", platform: "Windows"})
 
-    expected = {"Linux"=>1, "Windows"=>1, "Macintosh"=>1}
+    expected = {"Linux"=>1, "Macintosh"=>2, "Windows"=>3}
 
     assert_equal expected, UserAgent.platform_breakdown
   end
