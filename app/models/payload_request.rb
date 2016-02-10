@@ -5,6 +5,7 @@ class PayloadRequest < ActiveRecord::Base
   belongs_to :resolution
   belongs_to :url
   belongs_to :referral
+  belongs_to :client
 
   validates_presence_of :url_id, :referral_id, :requested_at, :responded_in, :request_type_id, :resolution_id, :ip,:user_agent_id
 
