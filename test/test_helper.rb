@@ -72,7 +72,7 @@ module PayloadTestData
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":190,
       "ip":"63.29.38.211",
-      "referral_id": @referral_2.id,
+      "referral_id": @referral_3.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
