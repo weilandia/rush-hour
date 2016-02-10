@@ -6,4 +6,7 @@ services:
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
+addons:
+  code_climate:
+      repo_token: ea6a8044592761381a22ecf161f17f5d0c8bc066aafe9c8f3295ef12e72d2b74
 # cache: bundler
