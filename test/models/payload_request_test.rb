@@ -9,7 +9,7 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_payload_request_url
-    assert_equal "1", PayloadRequest.find(@payload_base.id).url_id
+    assert_equal 1, PayloadRequest.find(@payload_base.id).url_id
   end
 
   def test_payload_requested_at
@@ -25,22 +25,22 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_payload_referred_by
-    assert_equal "5",
+    assert_equal 5,
     PayloadRequest.find(@payload_base.id).referred_by_id
   end
 
   def test_payload_request_type
-    assert_equal "1",
+    assert_equal 1,
     PayloadRequest.find(@payload_base.id).request_type_id
   end
 
   def test_payload_social_login
-    assert_equal "1",
+    assert_equal 1,
     PayloadRequest.find(@payload_base.id).event_id
   end
 
   def test_payload_resolution_width
-    assert_equal "1",
+    assert_equal 1,
     PayloadRequest.find(@payload_base.id).resolution_id
   end
 
