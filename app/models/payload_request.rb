@@ -6,14 +6,7 @@ class PayloadRequest < ActiveRecord::Base
   belongs_to :url
   belongs_to :referral
 
-  validates :url_id, presence: true
-  validates :referral_id, presence: true
-  validates :requested_at, presence: true
-  validates :responded_in, presence: true
-  validates :request_type_id, presence: true
-  validates :resolution_id, presence: true
-  validates :ip, presence: true
-  validates :user_agent_id, presence: true
+  validates_presence_of :url_id, :referral_id, :requested_at, :responded_in, :request_type_id, :resolution_id, :ip,:user_agent_id
 
   def self.avg_response_time
     average(:responded_in)
