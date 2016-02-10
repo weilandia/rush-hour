@@ -4,7 +4,6 @@ class Url < ActiveRecord::Base
   has_many :referrals, through: :payload_requests
   has_many :user_agents, through: :payload_requests
 
-  #url specific
   def max_response_time
     payload_requests.maximum(:responded_in)
   end
@@ -15,7 +14,6 @@ class Url < ActiveRecord::Base
 
   def response_times_ordered
     payload_requests.group(:responded_in).order(:responded_in).count
-    # payload_requests.sort_by(&:responded_in).reverse
   end
 
   def avg_response_time
@@ -24,6 +22,10 @@ class Url < ActiveRecord::Base
 
   def associated_verbs
     request_types.group(:verb).count
+  end
+
+  def self.ordered_by_requested
+    joins(:payload_requests).group("urls.path").order(count: :desc, path: :asc).count
   end
 
   def top_three_referrers
