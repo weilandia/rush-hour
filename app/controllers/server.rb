@@ -7,8 +7,10 @@ module RushHour
 
       client = Client.new(parameters)
 
-      if client.save
-        body "Did it work?"
+      if Client.exists?(identifier: params[:identifier])
+        status 403
+        body "Client #{params[:identifier]} already exists."
+      elsif client.save
       else
         status 400
         body client.errors.full_messages.join("")
