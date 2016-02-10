@@ -11,8 +11,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara/dsl'
 require 'codeclimate-test-reporter'
-require 'simplecov'
-require 'coveralls'
 require 'database_cleaner'
 
 DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
