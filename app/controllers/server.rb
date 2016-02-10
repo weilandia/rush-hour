@@ -7,6 +7,8 @@ module RushHour
 
       client = Client.new(parameters)
 
+      # require "pry"; binding.pry
+
       if Client.exists?(identifier: params[:identifier])
         status 403
         body "Client #{params[:identifier]} already exists."

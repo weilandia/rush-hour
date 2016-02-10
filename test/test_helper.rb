@@ -23,6 +23,9 @@ module TestHelpers
     DatabaseCleaner.clean
     super
   end
+  def app     # def app is something that Rack::Test is looking for, won't run without it
+   RushHour::Server
+  end
 end
 
 module PayloadTestData
