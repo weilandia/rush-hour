@@ -51,6 +51,10 @@ module PayloadTestData
     @referral_4 = Referral.create({referral_path: "http://jumpstartlab.com/3"})
     @referral_5 = Referral.create({referral_path: "http://jumpstartlab.com/4"})
 
+    @client_1 = Client.create({identifier: "turing", root_url: "http://turing.io"})
+    @client_2 = Client.create({identifier: "jumpstartlab", root_url: "http://jumpstartlab.com"})
+    @client_3 = Client.create({identifier: "google", root_url: "http://google.com"})
+
     payload_base = {
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":10,
@@ -60,7 +64,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event.id,
       "user_agent_id": @user_agent.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_2 = {
@@ -72,7 +77,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event.id,
       "user_agent_id": @user_agent.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_3 = {
@@ -84,7 +90,8 @@ module PayloadTestData
       "event_id": @event2.id,
       "request_type_id": @request_type.id,
       "user_agent_id": @user_agent.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_4 = {
@@ -96,7 +103,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event2.id,
       "user_agent_id": @user_agent2.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_5 = {
@@ -108,7 +116,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event2.id,
       "user_agent_id": @user_agent2.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_6 = {
@@ -120,7 +129,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event.id,
       "user_agent_id": @user_agent4.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_7 = {
@@ -132,7 +142,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event.id,
       "user_agent_id": @user_agent.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_8 = {
@@ -143,7 +154,8 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "user_agent_id": @user_agent4.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_9 = {
@@ -155,7 +167,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event3.id,
       "user_agent_id": @user_agent4.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     payload_base_10 = {
@@ -167,7 +180,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "event_id": @event3.id,
       "user_agent_id": @user_agent4.id,
-      "resolution_id": @resolution.id
+      "resolution_id": @resolution.id,
+      "client_id": @client_2.id
     }
 
     @payload_base = PayloadRequest.create(payload_base)
