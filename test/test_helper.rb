@@ -18,6 +18,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   CodeClimate::TestReporter::Formatter
 ])
 SimpleCov.start do
+  add_group "Multiple Files", ["app/models", "app/controllers", "app/lib"]
   add_filter "/test/"
 end
 DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
