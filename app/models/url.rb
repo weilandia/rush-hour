@@ -1,6 +1,8 @@
 class Url < ActiveRecord::Base
   has_many :payload_requests
   has_many :request_types, through: :payload_requests
+  has_many :referrals, through: :payload_requests
+  has_many :user_agents, through: :payload_requests
 
   #url specific
   def max_response_time
@@ -22,6 +24,14 @@ class Url < ActiveRecord::Base
 
   def associated_verbs
     request_types.group("verb").count
+  end
+
+  def top_three_referrers
+    referrals.group("referred_by_id")
+  end
+
+  def top_three_user_agents
+
   end
 
 end

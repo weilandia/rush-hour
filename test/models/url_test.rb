@@ -29,12 +29,12 @@ class UrlTest < Minitest::Test
     expected = {"GET"=>2}
     assert_equal expected, @url_1.associated_verbs
   end
+
+  def test_top_three_referrers
+    assert_equal " ", @url_1.top_three_referrers
+  end
+
 end
 
-# Max Response time
-# Min Response time
-# A list of response times across all requests listed from longest response time to shortest response time.
-# Average Response time for this URL
-# HTTP Verb(s) associated used to it this URL
 # Three most popular referrers
 # Three most popular user agents

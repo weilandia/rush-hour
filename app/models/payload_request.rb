@@ -3,7 +3,7 @@ class PayloadRequest < ActiveRecord::Base
   belongs_to :event
   belongs_to :request_type
   belongs_to :resolution
-  belongs_to :urls
+  belongs_to :url
   belongs_to :referral
 
   validates :url_id, presence: true
@@ -32,14 +32,6 @@ class PayloadRequest < ActiveRecord::Base
     urls = group("url_id").count.map { |k, v| [Url.find_by(id: k).path, v] }
     urls.sort_by { |k, v| v }.reverse.to_h
      #take out ruby methods later
-  end
-
-  def self.top_three_referrers
-
-  end
-
-  def self.top_three_user_agents
-
   end
 
 end
