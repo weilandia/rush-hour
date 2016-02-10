@@ -28,6 +28,11 @@ exclude_paths:
 - config/
 - db/
 - test/
+- **.ru
+- Gemfile
+- Rakefile
+- **.md
+- **.xml
 ---
 engines:
   csslint:
