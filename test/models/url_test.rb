@@ -31,7 +31,7 @@ class UrlTest < Minitest::Test
   end
 
   def test_top_three_referrers
-    assert_equal [["http://jumpstartlab.com/2", 5], ["http://jumpstartlab.com/4", 2], ["http://jumpstartlab.com/3", 2]], @url_1.top_three_referrers
+    assert_equal [["http://jumpstartlab.com/2", 5], ["http://jumpstartlab.com/3", 2], ["http://jumpstartlab.com/4", 2]], @url_1.top_three_referrers
   end
 
   def test_top_three_user_agents

@@ -28,15 +28,16 @@ class PayloadRequest < ActiveRecord::Base
   end
 
   def self.urls_ordered_by_requested
-    urls = group(:url_id).count.map { |k, v| [Url.find_by(id: k).path, v] }
+    urls = group(:url_id).count.map { |k, v| [Url.find(k), v] }
     urls.sort_by { |k, v| v }.reverse.to_h
-     #take out ruby methods later
+    # urls = self.all.map { |p| p.url }.uniq
+    # urls.map { |u| [u.path, u.payload_requests.count] }
   end
 
   def self.events
     e = group(:event_id).count.map do |k, v|
       if Event.find_by(id: k).nil? then ["no event", v]
-      else [Event.find_by(id: k).name, v]
+      else [Event.find(k).name, v]
       end
     end
     e.sort_by { |k, v| v }.reverse.to_h

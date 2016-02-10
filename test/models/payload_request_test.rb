@@ -77,8 +77,9 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_urls_ordered_by_request_count
-    expected = {"http://jumpstartlab.com/blog"=>9, "http://jumpstartlab.com/exam"=>1}
-    assert_equal expected, PayloadRequest.urls_ordered_by_requested
+    expected = [["http://jumpstartlab.com/blog", 9], ["http://jumpstartlab.com/exam", 1]]
+    result = PayloadRequest.urls_ordered_by_requested.map { |k, v| [k.path, v] }
+    assert_equal expected, result
   end
 
   def test_events_ordered_by_count

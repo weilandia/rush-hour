@@ -27,11 +27,11 @@ class Url < ActiveRecord::Base
   end
 
   def top_three_referrers
-    referrals.group(:referral_path).order(count: :desc).count.take(3)
+    referrals.group(:referral_path).order(count: :desc, referral_path: :asc).count.take(3)
   end
 
   def top_three_user_agents
-    user_agents.group([:browser, :platform]).order(count: :desc).count.take(3)
+    user_agents.group([:browser, :platform]).order(count: :desc, browser: :asc).count.take(3)
   end
 
 end
