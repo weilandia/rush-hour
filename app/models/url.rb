@@ -6,32 +6,32 @@ class Url < ActiveRecord::Base
 
   #url specific
   def max_response_time
-    payload_requests.maximum("responded_in")
+    payload_requests.maximum(:responded_in)
   end
 
   def min_response_time
-    payload_requests.minimum("responded_in")
+    payload_requests.minimum(:responded_in)
   end
 
   def response_times_ordered
-    payload_requests.group("responded_in").order("responded_in").count
+    payload_requests.group(:responded_in).order(:responded_in).count
     # payload_requests.sort_by(&:responded_in).reverse
   end
 
   def avg_response_time
-    payload_requests.average("responded_in")
+    payload_requests.average(:responded_in)
   end
 
   def associated_verbs
-    request_types.group("verb").count
+    request_types.group(:verb).count
   end
 
   def top_three_referrers
-    referrals.group("referral_path").order(count: :desc).count.take(3)
+    referrals.group(:referral_path).order(count: :desc).count.take(3)
   end
 
   def top_three_user_agents
-    user_agents.group(["browser", "platform"]).order(count: :desc).count.take(3)
+    user_agents.group([:browser, :platform]).order(count: :desc).count.take(3)
   end
 
 end
