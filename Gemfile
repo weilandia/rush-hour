@@ -14,8 +14,6 @@ group :development, :test do
   gem 'rack-test'
   gem 'database_cleaner'
   gem 'rake'
-  gem 'simplecov'
   gem 'pry'
   gem "codeclimate-test-reporter", require: nil
-  gem 'coveralls', require: false
 end

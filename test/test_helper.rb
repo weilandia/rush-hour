@@ -15,15 +15,6 @@ require 'simplecov'
 require 'coveralls'
 require 'database_cleaner'
 
-# SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-#   Coveralls::SimpleCov::Formatter,
-#   SimpleCov::Formatter::HTMLFormatter,
-#   CodeClimate::TestReporter::Formatter
-# ])
-# SimpleCov.start do
-#   add_group "Multiple Files", ["app/models", "app/controllers", "app/lib"]
-#   add_filter "/test/"
-# end
 DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
 
 module TestHelpers
