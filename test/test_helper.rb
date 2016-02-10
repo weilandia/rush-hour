@@ -108,7 +108,7 @@ module PayloadTestData
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":130,
       "ip":"63.29.38.211",
-      "referral_id": @referral_5.id,
+      "referral_id": @referral_3.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event2.id,
@@ -124,7 +124,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent2.id,
+      "user_agent_id": @user_agent4.id,
       "resolution_id": @resolution.id
     }
 
@@ -132,11 +132,11 @@ module PayloadTestData
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":130,
       "ip":"63.29.38.211",
-      "referral_id": @referral_4.id,
+      "referral_id": @referral_3.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent3.id,
+      "user_agent_id": @user_agent.id,
       "resolution_id": @resolution.id
     }
 

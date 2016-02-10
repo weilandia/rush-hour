@@ -31,10 +31,10 @@ class UrlTest < Minitest::Test
   end
 
   def test_top_three_referrers
-    assert_equal [["http://jumpstartlab.com/4", 3], ["http://jumpstartlab.com/3", 2], ["http://jumpstartlab.com/2", 2]], @url_1.top_three_referrers
+    assert_equal [["http://jumpstartlab.com/2", 4], ["http://jumpstartlab.com/4", 2], ["http://jumpstartlab.com/3", 1]], @url_1.top_three_referrers
   end
 
   def test_top_three_user_agents
-    assert_equal [[["Safari", "Macintosh"], 3], [["Chrome", "Windows"], 3], [["Chrome", "Macintosh"], 2]], @url_1.top_three_user_agents
+    assert_equal [[["Chrome", "Windows"], 4], [["Chrome", "Macintosh"], 3], [["Safari", "Macintosh"], 2]], @url_1.top_three_user_agents
   end
 end
