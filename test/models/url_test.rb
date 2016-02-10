@@ -24,6 +24,11 @@ class UrlTest < Minitest::Test
   def test_avg_response_time
     assert_equal 100.0, @url_1.avg_response_time
   end
+
+  def test_associated_verbs
+    expected = {"GET"=>2}
+    assert_equal expected, @url_1.associated_verbs
+  end
 end
 
 # Max Response time

@@ -1,5 +1,6 @@
 class Url < ActiveRecord::Base
   has_many :payload_requests
+  has_many :request_types, through: :payload_requests
 
   #url specific
   def max_response_time
@@ -20,11 +21,7 @@ class Url < ActiveRecord::Base
   end
 
   def associated_verbs
-    # require 'pry'
-    # binding.pry
-    # map do |p|
-    #   RequestType.find_by(id: p.id).request_type
-    # end.uniq
+    request_types.group("verb").count
   end
 
 end

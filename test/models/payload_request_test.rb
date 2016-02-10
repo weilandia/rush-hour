@@ -80,4 +80,5 @@ class PayloadRequestTest < Minitest::Test
     expected = {"http://jumpstartlab.com/blog"=>2, "http://jumpstartlab.com/exam"=>1, "http://jumpstartlab.com/home"=>1}
     assert_equal expected, PayloadRequest.urls_ordered_by_requested
   end
+
 end
