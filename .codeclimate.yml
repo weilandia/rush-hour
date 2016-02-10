@@ -33,6 +33,7 @@ exclude_paths:
 - Rakefile
 - **.md
 - **.xml
+- **.yml
 ---
 engines:
   csslint:
