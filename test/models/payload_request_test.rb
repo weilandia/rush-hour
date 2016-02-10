@@ -25,8 +25,8 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_payload_referred_by
-    assert_equal 5,
-    PayloadRequest.find(@payload_base.id).referred_by_id
+    assert_equal 1,
+    PayloadRequest.find(@payload_base.id).referral_id
   end
 
   def test_payload_request_type
@@ -65,7 +65,7 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_average_response_time
-    assert_equal 100.0, PayloadRequest.avg_response_time
+    assert_equal 118.0, PayloadRequest.avg_response_time
   end
 
   def test_max_response_time
@@ -77,7 +77,7 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_urls_ordered_by_request_count
-    expected = {"http://jumpstartlab.com/blog"=>2, "http://jumpstartlab.com/exam"=>1, "http://jumpstartlab.com/home"=>1}
+    expected = {"http://jumpstartlab.com/blog"=>9, "http://jumpstartlab.com/exam"=>1}
     assert_equal expected, PayloadRequest.urls_ordered_by_requested
   end
 

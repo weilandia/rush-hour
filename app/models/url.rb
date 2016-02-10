@@ -27,7 +27,7 @@ class Url < ActiveRecord::Base
   end
 
   def top_three_referrers
-    referrals.group("referred_by_id")
+    referrals.group("referral_path").order(count: :desc).count.take(3)
   end
 
   def top_three_user_agents

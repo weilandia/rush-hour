@@ -5,7 +5,7 @@ class CreatePayloadRequests < ActiveRecord::Migration
       t.integer   :responded_in
       t.datetime  :requested_at
       t.integer   :url_id
-      t.integer   :referred_by_id
+      t.integer   :referral_id
       t.integer   :resolution_id
       t.integer   :request_type_id
       t.integer   :event_id

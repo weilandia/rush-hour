@@ -17,21 +17,21 @@ class UrlTest < Minitest::Test
   end
 
   def test_ordered_response_time
-    expected = {190=>1, 10=>1}
+    expected = {10=>1, 130=>7, 190=>1}
     assert_equal expected, @url_1.response_times_ordered
   end
 
   def test_avg_response_time
-    assert_equal 100.0, @url_1.avg_response_time
+    assert_equal 123.33, @url_1.avg_response_time.round(2)
   end
 
   def test_associated_verbs
-    expected = {"GET"=>2}
+    expected = {"GET"=>9}
     assert_equal expected, @url_1.associated_verbs
   end
 
   def test_top_three_referrers
-    assert_equal " ", @url_1.top_three_referrers
+    assert_equal [["http://jumpstartlab.com/4", 3], ["http://jumpstartlab.com/3", 2], ["http://jumpstartlab.com/2", 2]], @url_1.top_three_referrers
   end
 
 end

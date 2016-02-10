@@ -7,7 +7,7 @@ class PayloadRequest < ActiveRecord::Base
   belongs_to :referral
 
   validates :url_id, presence: true
-  validates :referred_by_id, presence: true
+  validates :referral_id, presence: true
   validates :requested_at, presence: true
   validates :responded_in, presence: true
   validates :request_type_id, presence: true

@@ -55,7 +55,7 @@ module PayloadTestData
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":10,
       "ip":"63.29.38.211",
-      "referred_by_id": @referral_5.id,
+      "referral_id": @referral_1.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
@@ -67,7 +67,7 @@ module PayloadTestData
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":190,
       "ip":"63.29.38.211",
-      "referred_by_id": @referral_4.id,
+      "referral_id": @referral_2.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
@@ -80,7 +80,7 @@ module PayloadTestData
       "responded_in":70,
       "ip":"63.29.38.211",
       "url_id": @url_2.id,
-      "referred_by_id": @referral_3.id,
+      "referral_id": @referral_3.id,
       "event_id": @event.id,
       "request_type_id": @request_type.id,
       "user_agent_id": @user_agent.id,
@@ -91,8 +91,80 @@ module PayloadTestData
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":130,
       "ip":"63.29.38.211",
-      "referred_by_id": @referral_5.id,
-      "url_id": @url_3.id,
+      "referral_id": @referral_3.id,
+      "url_id": @url_1.id,
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+
+    payload_base_5 = {
+      "requested_at":"2013-02-16 21:38:28 -0700",
+      "responded_in":130,
+      "ip":"63.29.38.211",
+      "referral_id": @referral_5.id,
+      "url_id": @url_1.id,
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+
+    payload_base_6 = {
+      "requested_at":"2013-02-16 21:38:28 -0700",
+      "responded_in":130,
+      "ip":"63.29.38.211",
+      "referral_id": @referral_3.id,
+      "url_id": @url_1.id,
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+
+    payload_base_7 = {
+      "requested_at":"2013-02-16 21:38:28 -0700",
+      "responded_in":130,
+      "ip":"63.29.38.211",
+      "referral_id": @referral_4.id,
+      "url_id": @url_1.id,
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+
+    payload_base_8 = {
+      "requested_at":"2013-02-16 21:38:28 -0700",
+      "responded_in":130,
+      "ip":"63.29.38.211",
+      "referral_id": @referral_4.id,
+      "url_id": @url_1.id,
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+
+    payload_base_9 = {
+      "requested_at":"2013-02-16 21:38:28 -0700",
+      "responded_in":130,
+      "ip":"63.29.38.211",
+      "referral_id": @referral_5.id,
+      "url_id": @url_1.id,
+      "request_type_id": @request_type.id,
+      "event_id": @event.id,
+      "user_agent_id": @user_agent.id,
+      "resolution_id": @resolution.id
+    }
+
+    payload_base_10 = {
+      "requested_at":"2013-02-16 21:38:28 -0700",
+      "responded_in":130,
+      "ip":"63.29.38.211",
+      "referral_id": @referral_5.id,
+      "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
       "user_agent_id": @user_agent.id,
@@ -103,6 +175,12 @@ module PayloadTestData
     @payload_base_2 = PayloadRequest.create(payload_base_2)
     @payload_base_3 = PayloadRequest.create(payload_base_3)
     @payload_base_4 = PayloadRequest.create(payload_base_4)
+    @payload_base_5 = PayloadRequest.create(payload_base_5)
+    @payload_base_6 = PayloadRequest.create(payload_base_6)
+    @payload_base_7 = PayloadRequest.create(payload_base_7)
+    @payload_base_8 = PayloadRequest.create(payload_base_8)
+    @payload_base_9 = PayloadRequest.create(payload_base_9)
+    @payload_base_10 = PayloadRequest.create(payload_base_10)
   end
 end
 
