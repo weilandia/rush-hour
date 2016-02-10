@@ -1,5 +1,35 @@
 ---
 engines:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "app/views/**.erb"
+  - "app/models/**.rb"
+  - "app/controllers/**.rb"
+  - "app/lib/**.rb"
+  - "app/public/**.js"
+exclude_paths:
+- config/
+- db/
+- test/
+---
+engines:
   csslint:
     enabled: false
   duplication:
@@ -16,12 +46,7 @@ engines:
 ratings:
   paths:
   - "**.css"
-  - "**.inc"
   - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
   - "**.rb"
 exclude_paths:
 - spec/**/*
