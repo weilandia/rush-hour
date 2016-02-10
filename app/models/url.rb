@@ -1,10 +1,6 @@
 class Url < ActiveRecord::Base
   has_many :payload_requests
 
-  # def get_url_string(id)
-  #   find(id).path
-  # end
-
   #url specific
   def max_response_time
     payload_requests.maximum("responded_in")
@@ -30,4 +26,5 @@ class Url < ActiveRecord::Base
     #   RequestType.find_by(id: p.id).request_type
     # end.uniq
   end
+
 end

@@ -33,4 +33,13 @@ class PayloadRequest < ActiveRecord::Base
     urls.sort_by { |k, v| v }.reverse.to_h
      #take out ruby methods later
   end
+
+  def self.top_three_referrers
+
+  end
+
+  def self.top_three_user_agents
+
+  end
+
 end
