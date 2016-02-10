@@ -17,7 +17,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::HTMLFormatter,
   CodeClimate::TestReporter::Formatter
 ])
-SimpleCov.start
+SimpleCov.start do
+  add_filter "/test/"
+end
 DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
 
 module TestHelpers
