@@ -37,4 +37,10 @@ class UrlTest < Minitest::Test
   def test_top_three_user_agents
     assert_equal [[["Chrome", "Windows"], 4], [["Chrome", "Macintosh"], 3], [["Safari", "Macintosh"], 2]], @url_1.top_three_user_agents
   end
+
+  def test_ordered_by_requested
+    expected = {"http://jumpstartlab.com/blog"=>9, "http://jumpstartlab.com/exam"=>1}
+    result = Url.ordered_by_requested
+    assert_equal expected, result
+  end
 end
