@@ -33,6 +33,7 @@ end
 module PayloadTestData
   def gather_data
     @resolution = Resolution.create({width: "1920", height: "1280"})
+    @resolution2 = Resolution.create({width: "400", height: "500"})
 
     @request_type = RequestType.create({verb: "GET"})
 
@@ -52,7 +53,7 @@ module PayloadTestData
 
     payload_base = {
       "requested_at":"2013-02-16 21:38:28 -0700",
-      "responded_in":37,
+      "responded_in":10,
       "ip":"63.29.38.211",
       "referred_by_id": @referral_5.id,
       "url_id": @url_1.id,
@@ -64,7 +65,7 @@ module PayloadTestData
 
     payload_base_2 = {
       "requested_at":"2013-02-16 21:38:28 -0700",
-      "responded_in":63,
+      "responded_in":190,
       "ip":"63.29.38.211",
       "referred_by_id": @referral_4.id,
       "url_id": @url_1.id,
@@ -76,7 +77,7 @@ module PayloadTestData
 
     payload_base_3 = {
       "requested_at":"2013-02-16 21:38:28 -0700",
-      "responded_in":63,
+      "responded_in":70,
       "ip":"63.29.38.211",
       "url_id": @url_2.id,
       "referred_by_id": @referral_3.id,
@@ -88,7 +89,7 @@ module PayloadTestData
 
     payload_base_4 = {
       "requested_at":"2013-02-16 21:38:28 -0700",
-      "responded_in":63,
+      "responded_in":130,
       "ip":"63.29.38.211",
       "referred_by_id": @referral_5.id,
       "url_id": @url_3.id,

@@ -2,21 +2,19 @@ require_relative "../test_helper"
 
 class UserAgentTest < Minitest::Test
   include TestHelpers
+  include PayloadTestData
 
   def setup
-    @user_agent = UserAgent.create({browser: "Chrome", platform: "Macintosh"})
+    gather_data
   end
 
-  def test_user_agent_id
-    assert_equal @user_agent.id, UserAgent.find(@user_agent.id).id
-  end
 
   def test_user_agent_platform
-    assert_equal @user_agent.platform, UserAgent.find(@user_agent.id).platform
+    assert_equal "Macintosh", @user_agent.platform
   end
 
   def test_user_agent_browser
-    assert_equal @user_agent.browser, UserAgent.find(@user_agent.id).browser
+    assert_equal "Chrome", @user_agent.browser
   end
 
   def test_user_agent_browser_breakdown
@@ -24,18 +22,18 @@ class UserAgentTest < Minitest::Test
 
     UserAgent.create({browser: "Pearl", platform: "Macintosh"})
 
-    result = {"Chrome"=>1, "Pearl"=>1, "Safari"=>1}
+    expected = {"Chrome"=>1, "Pearl"=>1, "Safari"=>1}
 
-    assert_equal result, UserAgent.browser_breakdown
+    assert_equal expected, UserAgent.browser_breakdown
   end
 
-  def test_user_agent_browser_breakdown
+  def test_user_agent_platform_breakdown
     UserAgent.create({browser: "Safari", platform: "Linux"})
 
     UserAgent.create({browser: "Pearl", platform: "Windows"})
 
-    result = {"Linux"=>1, "Windows"=>1, "Macintosh"=>1}
+    expected = {"Linux"=>1, "Windows"=>1, "Macintosh"=>1}
 
-    assert_equal result, UserAgent.platform_breakdown
+    assert_equal expected, UserAgent.platform_breakdown
   end
 end

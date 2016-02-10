@@ -4,15 +4,11 @@ class EventTest < Minitest::Test
   include TestHelpers
 
   def setup
-    @event = Event.create({event: "socialLogin"})
-  end
-
-  def test_event_id
-    assert_equal @event.id, Event.find(@event.id).id
+    @event = Event.create({name: "socialLogin"})
   end
 
   def test_event_name
-    assert_equal @event.event, Event.find(@event.id).event
+    assert_equal "socialLogin", Event.find(@event.id).name
   end
 
 end

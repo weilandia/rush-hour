@@ -29,6 +29,8 @@ class PayloadRequest < ActiveRecord::Base
   end
 
   def self.urls_ordered_by_requested
-    group("url").count.map {|k, v| k}
+    urls = group("url_id").count.map { |k, v| [Url.find_by(id: k).path, v] }
+    urls.sort_by { |k, v| v }.reverse.to_h
+     #take out ruby methods later
   end
 end

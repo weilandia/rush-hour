@@ -6,8 +6,8 @@ class RequestType < ActiveRecord::Base
     group("verb").count.max_by {|k, v| v}[0]
   end
 
-  def self.all
-    pluck(:verb).distinct
+  def self.all_verbs
+    group("verb").count
   end
 
 end
