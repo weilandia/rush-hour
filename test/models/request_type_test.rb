@@ -32,5 +32,4 @@ class RequestTypeTest < Minitest::Test
 
     assert_equal expected, RequestType.all_verbs
   end
-
 end

@@ -4,7 +4,6 @@ class Resolution < ActiveRecord::Base
   def self.breakdown
     group([:width, :height]).count
   end
-
 end
 
 # class ClientPresenter

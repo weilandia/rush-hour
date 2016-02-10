@@ -75,5 +75,4 @@ class PayloadRequestTest < Minitest::Test
   def test_min_response_time
     assert_equal 10, PayloadRequest.min_response_time
   end
-
 end

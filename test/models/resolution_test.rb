@@ -23,5 +23,4 @@ class ResolutionTest < Minitest::Test
 
     assert_equal expected, Resolution.breakdown
   end
-
 end

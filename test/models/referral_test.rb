@@ -10,5 +10,4 @@ class ReferralTest < Minitest::Test
   def test_event_name
     assert_equal "http://jumpstartlab.com", Referral.find(@referral.id).referral_path
   end
-
 end

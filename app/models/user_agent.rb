@@ -8,5 +8,4 @@ class UserAgent < ActiveRecord::Base
   def self.platform_breakdown
     group(:platform).count
   end
-
 end

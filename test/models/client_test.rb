@@ -11,5 +11,4 @@ class ClientTest < Minitest::Test
     assert_equal            "jumpstartlab", @client.identifier
     assert_equal "http://jumpstartlab.com", @client.root_url
   end
-
 end

@@ -1,5 +1,4 @@
 class RequestType < ActiveRecord::Base
-
   has_many :payload_requests
 
   def self.top
@@ -9,5 +8,4 @@ class RequestType < ActiveRecord::Base
   def self.all_verbs
     group(:verb).count
   end
-
 end
