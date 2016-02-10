@@ -4,12 +4,12 @@ class CreatePayloadRequests < ActiveRecord::Migration
       t.string    :ip
       t.integer   :responded_in
       t.datetime  :requested_at
-      t.string    :url_id
-      t.string    :referred_by_id
-      t.string    :resolution_id
-      t.string    :request_type_id
-      t.string    :event_id
-      t.string    :user_agent_id
+      t.integer       :url_id
+      t.integer       :referred_by_id
+      t.integer       :resolution_id
+      t.integer       :request_type_id
+      t.integer       :event_id
+      t.integer       :user_agent_id
 
       t.timestamps null: false
     end
