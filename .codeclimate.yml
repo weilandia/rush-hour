@@ -30,7 +30,6 @@ exclude_paths:
 - test/
 - Gemfile
 - Rakefile
----
 engines:
   csslint:
     enabled: false
