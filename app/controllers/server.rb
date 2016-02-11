@@ -20,6 +20,11 @@ module RushHour
       body message
     end
 
+    get '/sources/:client' do
+      @client = Client.find_by(identifier: params[:client])
+      erb :statistics
+    end
+
     not_found do
     erb :error
     end

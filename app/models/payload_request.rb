@@ -11,14 +11,14 @@ class PayloadRequest < ActiveRecord::Base
 
 
   def self.avg_response_time
-    average(:responded_in)
+    average(:responded_in).round(2)
   end
 
   def self.max_response_time
-    maximum(:responded_in)
+    maximum(:responded_in).round(2)
   end
 
   def self.min_response_time
-    minimum(:responded_in)
+    minimum(:responded_in).round(2)
   end
 end
