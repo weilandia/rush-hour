@@ -77,6 +77,7 @@ class CreateServerTest < Minitest::Test
 
     assert_equal 1, PayloadRequest.count
     assert_equal 403, last_response.status
+    assert_equal "JUMPSTARTLAB: payload already exists.", last_response.body
   end
 
   def test_unique_payload_status_returns_200

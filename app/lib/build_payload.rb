@@ -12,7 +12,7 @@ module BuildPayload
 
     request = client.payload_requests.new(payload)
     if payload_already_exists(request, client)
-      [403, ""]
+      [403, "#{client.identifier.upcase}: payload already exists."]
     elsif request.save
       [200,""]
     elsif payload.values.include?(nil)
