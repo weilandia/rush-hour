@@ -39,10 +39,10 @@ module PayloadTestData
     @event2 = Event.create({name: "newsBreaks"})
     @event3 = Event.create({name: "tweet"})
 
-    @user_agent = UserAgent.create({browser: "Chrome", platform: "Macintosh"})
-    @user_agent2 = UserAgent.create({browser: "Safari", platform: "Macintosh"})
-    @user_agent3 = UserAgent.create({browser: "Mozilla", platform: "Windows"})
-    @user_agent4  = UserAgent.create({browser: "Chrome", platform: "Windows"})
+    @agent = Agent.create({browser: "Chrome", platform: "Macintosh"})
+    @agent2 = Agent.create({browser: "Safari", platform: "Macintosh"})
+    @agent3 = Agent.create({browser: "Mozilla", platform: "Windows"})
+    @agent4  = Agent.create({browser: "Chrome", platform: "Windows"})
 
     @url_1 = Url.create({path: "http://jumpstartlab.com/blog"})
     @url_2 = Url.create({path: "http://jumpstartlab.com/exam"})
@@ -66,7 +66,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "agent_id": @agent.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -79,7 +79,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "agent_id": @agent.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -92,7 +92,7 @@ module PayloadTestData
       "referral_id": @referral_3.id,
       "event_id": @event2.id,
       "request_type_id": @request_type.id,
-      "user_agent_id": @user_agent.id,
+      "agent_id": @agent.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -105,7 +105,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event2.id,
-      "user_agent_id": @user_agent2.id,
+      "agent_id": @agent2.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -118,7 +118,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event2.id,
-      "user_agent_id": @user_agent2.id,
+      "agent_id": @agent2.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -131,7 +131,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent4.id,
+      "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -144,7 +144,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event.id,
-      "user_agent_id": @user_agent.id,
+      "agent_id": @agent.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -156,7 +156,7 @@ module PayloadTestData
       "referral_id": @referral_4.id,
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
-      "user_agent_id": @user_agent4.id,
+      "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -169,7 +169,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event3.id,
-      "user_agent_id": @user_agent4.id,
+      "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }
@@ -182,7 +182,7 @@ module PayloadTestData
       "url_id": @url_1.id,
       "request_type_id": @request_type.id,
       "event_id": @event3.id,
-      "user_agent_id": @user_agent4.id,
+      "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
       "client_id": @client_2.id
     }

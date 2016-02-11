@@ -2,7 +2,7 @@ class Url < ActiveRecord::Base
   has_many :payload_requests
   has_many :request_types, through: :payload_requests
   has_many :referrals, through: :payload_requests
-  has_many :user_agents, through: :payload_requests
+  has_many :agents, through: :payload_requests
 
   def max_response_time
     payload_requests.maximum(:responded_in)
@@ -33,6 +33,6 @@ class Url < ActiveRecord::Base
   end
 
   def top_three_user_agents
-    user_agents.group([:browser, :platform]).order(count: :desc, browser: :asc).count.take(3)
+    agents.group([:browser, :platform]).order(count: :desc, browser: :asc).count.take(3)
   end
 end

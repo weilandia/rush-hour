@@ -9,7 +9,7 @@ class CreatePayloadRequests < ActiveRecord::Migration
       t.integer   :resolution_id
       t.integer   :request_type_id
       t.integer   :event_id
-      t.integer   :user_agent_id
+      t.integer   :agent_id
       t.integer   :client_id
 
       t.timestamps null: false

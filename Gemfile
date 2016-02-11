@@ -15,5 +15,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rake'
   gem 'pry'
-  gem "codeclimate-test-reporter", require: nil
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'useragent'
 end
