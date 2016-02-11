@@ -58,6 +58,8 @@ module PayloadTestData
     @client_2 = Client.create({identifier: "jumpstartlab", root_url: "http://jumpstartlab.com"})
     @client_3 = Client.create({identifier: "google", root_url: "http://google.com"})
 
+    @digest = "21ad5947f48560e8a6858361b02128f6dc8bc2c8"
+
     payload_base = {
       "requested_at":"2013-02-16 21:38:28 -0700",
       "responded_in":10,
@@ -68,7 +70,8 @@ module PayloadTestData
       "event_id": @event.id,
       "agent_id": @agent.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_2 = {
@@ -81,7 +84,8 @@ module PayloadTestData
       "event_id": @event.id,
       "agent_id": @agent.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_3 = {
@@ -94,7 +98,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "agent_id": @agent.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_4 = {
@@ -107,7 +112,8 @@ module PayloadTestData
       "event_id": @event2.id,
       "agent_id": @agent2.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_5 = {
@@ -120,7 +126,8 @@ module PayloadTestData
       "event_id": @event2.id,
       "agent_id": @agent2.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_6 = {
@@ -133,7 +140,8 @@ module PayloadTestData
       "event_id": @event.id,
       "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_7 = {
@@ -146,7 +154,8 @@ module PayloadTestData
       "event_id": @event.id,
       "agent_id": @agent.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_8 = {
@@ -158,7 +167,8 @@ module PayloadTestData
       "request_type_id": @request_type.id,
       "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_9 = {
@@ -171,7 +181,8 @@ module PayloadTestData
       "event_id": @event3.id,
       "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     payload_base_10 = {
@@ -184,7 +195,8 @@ module PayloadTestData
       "event_id": @event3.id,
       "agent_id": @agent4.id,
       "resolution_id": @resolution.id,
-      "client_id": @client_2.id
+      "client_id": @client_2.id,
+      "digest": @digest
     }
 
     @payload_base = PayloadRequest.create(payload_base)

@@ -1,3 +1,5 @@
+# use find_or_create_by instead of create
+
 module CreateAttributes
   def create_agent(raw_payload)
     parsed_agent = UserAgent.parse(raw_payload["userAgent"])

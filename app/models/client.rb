@@ -7,6 +7,9 @@ class Client < ActiveRecord::Base
   has_many :agents, through: :payload_requests
   has_many :referrals, through: :payload_requests
 
-
   validates_presence_of :identifier, :root_url
+
+  # def platform_breakdown
+  #   agents.platform_breakdown
+  # end
 end

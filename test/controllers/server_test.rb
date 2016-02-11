@@ -23,7 +23,7 @@ class CreateServerTest < Minitest::Test
     post '/sources', {identifier: "jumpstartlab"}
     assert_equal 0, Client.count
     assert_equal 400, last_response.status
-    assert_equal "Root url can't be blank", last_response.body #last response is a rack thing
+    assert_equal "Root url can't be blank", last_response.body
   end
 
   def test_client_already_exists

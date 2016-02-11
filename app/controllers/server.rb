@@ -1,7 +1,6 @@
 require 'json'
 require_relative '../lib/register_client'
 require_relative '../lib/build_payload'
-# require 'useragent'
 require 'digest/sha1'
 module RushHour
   class Server < Sinatra::Base
@@ -12,7 +11,7 @@ module RushHour
       code, message = register_client(params)
       status code
       body message
-      redirect "/sources/#{params['identifier']}"
+      # redirect "/sources/#{params['identifier']}"
     end
 
     post '/sources/:client/data' do
@@ -25,6 +24,8 @@ module RushHour
       @client = Client.find_by(identifier: params[:client])
       if @client.nil?
         redirect "/sources/signup/#{params[:client]}"
+      elsif @client.no_payloads?
+        # some view to indicate there are no payloads
       else
         erb :statistics
       end

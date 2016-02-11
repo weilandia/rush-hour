@@ -3,26 +3,21 @@ module BuildPayload
   include CreateAttributes
 
   def build_payload(params)
-    return no_client(params) if no_client?(params)
-    raw_payload = JSON.parse(params[:payload])
-
     client = Client.find_by(identifier: params[:client])
+    return no_client(params) unless client
+    raw_payload = JSON.parse(params[:payload])
 
     payload = payload_hash(raw_payload, client)
 
     request = client.payload_requests.new(payload)
-    if payload_already_exists(request, client)
+
+    if PayloadRequest.exists?(digest: payload["digest"])
       [403, "#{client.identifier.upcase}: payload already exists."]
     elsif request.save
       [200,""]
     elsif payload.values.include?(nil)
       [400, request.errors.full_messages.join("")]
     end
-  end
-
-  def payload_already_exists(request, client)
-    sha1 = payload_request_sha1(request)
-    client.payload_requests.all.map{|r| payload_request_sha1(r)}.include?(sha1)
   end
 
   def payload_hash(raw_payload, client)
@@ -36,32 +31,9 @@ module BuildPayload
       "event_id" => create_event(raw_payload),
       "agent_id" => create_agent(raw_payload),
       "resolution_id" => create_resolution(raw_payload),
-      "client_id" => client.id
+      "client_id" => client.id,
+      "digest" => Digest::SHA1.hexdigest(raw_payload.to_s)
     }
-  end
-
-  def payload_request_sha1(request)
-    unique_checks =
-    [
-       request.ip,
-       request.referral.referral_path,
-       request.url.path,
-       request.request_type.verb,
-       request.event.name,
-       request.agent.browser,
-       request.agent.platform,
-       request.resolution.height,
-       request.resolution.width,
-       request.client.identifier,
-       request.client.root_url
-    ]
-
-    to_sha1 = unique_checks.join("-")
-    Digest::SHA1.hexdigest(to_sha1)
-  end
-
-  def no_client?(params)
-    !Client.exists?(identifier: params[:client])
   end
 
   def no_client(params)

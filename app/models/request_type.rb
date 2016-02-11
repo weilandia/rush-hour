@@ -3,7 +3,7 @@ class RequestType < ActiveRecord::Base
 
   def self.top
     # return if !exists?(:verb)
-    group(:verb).count.max_by {|k, v| v}[0]
+    all_verbs.max_by {|_verb, count| count}.first
   end
 
   def self.all_verbs
