@@ -9,7 +9,6 @@ class PayloadRequestTest < Minitest::Test
   end
 
   def test_payload_request_url
-    # require "pry"; binding.pry
     assert_equal 1, PayloadRequest.find(@payload_base.id).url_id
   end
 

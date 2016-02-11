@@ -24,6 +24,7 @@ module RushHour
       if @client.nil?
         redirect "/sources/signup/#{params[:client]}"
       elsif @client.no_payloads?
+        erb :new_client
         # some view to indicate there are no payloads
       else
         erb :statistics
@@ -34,8 +35,14 @@ module RushHour
       erb :signup
     end
 
+    get '/sources/:client/urls/:path' do
+      erb :url_statistics
+    end
+
     not_found do
     erb :error
     end
   end
+
+
 end
