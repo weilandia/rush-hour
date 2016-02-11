@@ -1,22 +1,13 @@
 require 'json'
+require 'useragent'
+require_relative '../lib/register_client'
 module RushHour
   class Server < Sinatra::Base
-    require 'useragent'
+    include RegisterClient
     post "/sources" do
-      parameters = { identifier: params[:identifier], root_url: params[:rootUrl] }
-
-      client = Client.new(parameters)
-
-      # require "pry"; binding.pry
-
-      if Client.exists?(identifier: params[:identifier])
-        status 403
-        body "Client #{params[:identifier]} already exists."
-      elsif client.save
-      else
-        status 400
-        body client.errors.full_messages.join("")
-      end
+      code, message = register_client(params)
+      status code
+      body message
     end
 
     post '/sources/:client/data' do
