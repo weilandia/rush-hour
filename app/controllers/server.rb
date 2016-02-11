@@ -7,7 +7,6 @@ module RushHour
 
       client = Client.new(parameters)
 
-      # require "pry"; binding.pry
 
       if Client.exists?(identifier: params[:identifier])
         status 403
@@ -52,13 +51,13 @@ module RushHour
 
       request = client.payload_requests.new(payload) #create table in table request table sha of all attr besides id/time stuff
 
-      if payload.values.include?(nil)
-        status 400
-        body request.errors.full_messages.join("")
-      elsif PayloadRequest.exists?(id: params[:identifier])
+      if PayloadRequest.exists?(id: params[:identifier])
           status 403
           body "Client #{params[:identifier]} already exists."
       elsif request.save
+      elsif payload.values.include?(nil)
+        status 400
+        body request.errors.full_messages.join("")
       end
 
 
