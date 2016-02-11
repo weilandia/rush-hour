@@ -7,7 +7,7 @@ class PayloadRequest < ActiveRecord::Base
   belongs_to :referral
   belongs_to :client
 
-  validates_presence_of :url_id, :referral_id, :requested_at, :responded_in, :request_type_id, :resolution_id, :ip,:agent_id, :client_id
+  validates_presence_of :url_id, :referral_id, :requested_at, :responded_in, :request_type_id, :resolution_id, :ip, :agent_id, :client_id
 
 
   def self.avg_response_time
