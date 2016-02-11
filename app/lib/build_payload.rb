@@ -1,6 +1,14 @@
 require_relative '../lib/create_attributes'
-module BuildPayload
+
+class BuildPayload
   include CreateAttributes
+  attr_reader :code, :message
+
+  def initialize(params)
+    result = build_payload(params)
+    @code = result[0]
+    @message = result[1]
+  end
 
   def build_payload(params)
     client = Client.find_by(identifier: params[:client])

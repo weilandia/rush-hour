@@ -11,17 +11,14 @@ class PayloadRequest < ActiveRecord::Base
 
 
   def self.avg_response_time
-    # return if !exists?(:responded_in)
     average(:responded_in).round(2)
   end
 
   def self.max_response_time
-    # return if !exists?(:responded_in)
     maximum(:responded_in).round(2)
   end
 
   def self.min_response_time
-    # return if !exists?(:responded_in)
     minimum(:responded_in).round(2)
   end
 end

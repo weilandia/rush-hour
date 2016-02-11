@@ -5,7 +5,6 @@ require 'digest/sha1'
 module RushHour
   class Server < Sinatra::Base
     include RegisterClient
-    include BuildPayload
 
     post "/sources" do
       code, message = register_client(params)
@@ -15,9 +14,9 @@ module RushHour
     end
 
     post '/sources/:client/data' do
-      code, message = build_payload(params)
-      status code
-      body message
+      payload = BuildPayload.new(params)
+      status payload.code
+      body payload.message
     end
 
     get '/sources/:client' do
