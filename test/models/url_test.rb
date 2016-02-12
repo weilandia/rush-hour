@@ -40,7 +40,7 @@ class UrlTest < Minitest::Test
 
   def test_ordered_by_requested
     expected = {"http://jumpstartlab.com/blog"=>9, "http://jumpstartlab.com/exam"=>1}
-    result = Url.ordered_by_requested
+    result = Client.all[1].urls.ordered_by_requested
     assert_equal expected, result
   end
 end

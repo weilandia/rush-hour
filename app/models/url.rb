@@ -30,7 +30,7 @@ class Url < ActiveRecord::Base
   end
 
   def self.ordered_by_requested
-    joins(:payload_requests).group("urls.path").order(count: :desc, path: :asc).count
+    group("urls.path").order(count: :desc, path: :asc).count
   end
 
   def top_three_referrers
