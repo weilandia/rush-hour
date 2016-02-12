@@ -1,0 +1,16 @@
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <th>Top User Agents</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @url.top_three_user_agents.each do |k, v| %>
+    <tr>
+      <td><%= "#{k[0]},  #{k[1]}" %></td>
+      <td class="text-right"><%= v %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

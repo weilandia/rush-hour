@@ -22,7 +22,7 @@ class Url < ActiveRecord::Base
   end
 
   def avg_response_time
-    payload_requests.average(:responded_in)
+    payload_requests.average(:responded_in).round(2)
   end
 
   def associated_verbs

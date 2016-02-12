@@ -37,7 +37,11 @@ module RushHour
     get '/sources/:client/urls/:relative_path' do
       client = Client.find_by(identifier: params[:client])
       @url = client.urls.find_by(relative_path: "/#{params[:relative_path]}")
-      erb :url_statistics
+      if @url.nil?
+        erb :no_payload_for_path
+      elsif
+        erb :url_statistics
+      end
     end
 
     get '/errors' do

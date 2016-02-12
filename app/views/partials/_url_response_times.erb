@@ -17,6 +17,22 @@
       <tr>
         <td>Min response time</td>
         <td class="text-right"><%= @url.min_response_time %></td>
-      </tr>
+  </tbody>
+</table>
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <th>Response Times Ordered by Frequency</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    </tr>
+    <% @url.response_times_ordered.each do |k, v| %>
+    <tr>
+      <td><%= k %></td>
+      <td class="text-right"><%= v %></td>
+    </tr>
+    <% end %>
   </tbody>
 </table>
