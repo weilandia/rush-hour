@@ -216,6 +216,8 @@ end
 
 Capybara.app = RushHour::Server
 
+Capybara.save_and_open_page_path = "tmp/capybara"
+
 class FeatureTest < Minitest::Test
   include Capybara::DSL
   include TestHelpers

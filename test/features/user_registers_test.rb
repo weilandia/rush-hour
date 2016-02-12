@@ -11,6 +11,7 @@ class UserRegistersTest < FeatureTest
 
     visit '/sources/jumpstartlab'
     assert page.has_content?("Jumpstartlab")
+    assert page.has_content?("No payload data has been received for Jumpstartlab")
   end
 
 end
