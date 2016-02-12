@@ -44,4 +44,6 @@ module RushHour
     erb :error
     end
   end
+
+
 end

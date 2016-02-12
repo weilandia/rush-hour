@@ -12,4 +12,9 @@ class Client < ActiveRecord::Base
   # def platform_breakdown
   #   agents.platform_breakdown
   # end
+
+  def no_payloads?
+    payload_requests.all.empty?
+  end
+
 end
