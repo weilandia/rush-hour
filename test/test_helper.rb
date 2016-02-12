@@ -12,6 +12,7 @@ require 'minitest/pride'
 require 'capybara/dsl'
 require 'codeclimate-test-reporter'
 require 'database_cleaner'
+require 'tilt/erb'
 
 DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
 

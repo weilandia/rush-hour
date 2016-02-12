@@ -14,6 +14,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rack-test'
   gem 'database_cleaner'
+  gem 'tilt'
   gem 'rake'
   gem 'pry'
   gem 'codeclimate-test-reporter', require: nil
