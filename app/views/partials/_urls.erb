@@ -14,19 +14,3 @@
     <% end %>
   </tbody>
 </table>
-
-<table class='table table-hover'>
-  <thead>
-    <tr>
-      <th>URLs</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @client.urls.all.each do |path| %>
-      <tr>
-        <td><a href=("localhost:9393/sources/<%= @client.identifier %>")<%= path %></a></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
