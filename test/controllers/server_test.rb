@@ -1,5 +1,4 @@
 require_relative '../test_helper'
-require 'json'
 
 class CreateServerTest < Minitest::Test
   include Rack::Test::Methods #will get post, get, etc.
