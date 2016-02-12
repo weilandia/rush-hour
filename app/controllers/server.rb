@@ -39,7 +39,7 @@ module RushHour
       @url = client.urls.find_by(relative_path: "/#{params[:relative_path]}")
       if @url.nil?
         erb :no_payload_for_path
-      elsif
+      else
         erb :url_statistics
       end
     end
