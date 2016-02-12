@@ -1,5 +1,4 @@
 <div class="jumbotron text-center">
-  <h1><%= @client.identifier.capitalize %></h1>
-  <!-- <h3> <%= %></h3> message here-->
+  <h3><%= @url.host %><%= @url.relative_path %></h3>
 </div>
-<%= erb :'partials/_payload_stats' %>
+<%= erb :'partials/_url_stats' %>

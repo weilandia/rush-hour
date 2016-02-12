@@ -4,7 +4,10 @@ class Url < ActiveRecord::Base
   has_many :referrals, through: :payload_requests
   has_many :agents, through: :payload_requests
 
-  # validates :path, presence: true
+  validates_presence_of :path, :host, :relative_path
+  def avg_response_time
+    payload_requests.maximum(:responded_in)
+  end
 
   def max_response_time
     payload_requests.maximum(:responded_in)

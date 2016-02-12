@@ -23,9 +23,8 @@ module RushHour
       @client = Client.find_by(identifier: params[:client])
       if @client.nil?
         redirect "/sources/signup/#{params[:client]}"
-      elsif @client.no_payloads?
-        erb :new_client
-        # some view to indicate there are no payloads
+      # elsif @client.no_payloads?
+      #   # some view to indicate there are no payloads
       else
         erb :statistics
       end
@@ -35,7 +34,9 @@ module RushHour
       erb :signup
     end
 
-    get '/sources/:client/urls/:path' do
+    get '/sources/:client/urls/:relative_path' do
+      client = Client.find_by(identifier: params[:client])
+      @url = client.urls.find_by(relative_path: "/#{params[:relative_path]}")
       erb :url_statistics
     end
 
