@@ -216,7 +216,7 @@ end
 
 Capybara.app = RushHour::Server
 
-# class FeatureTest < Minitest::Test
-#   include Capybara::DSL
-#   include TestHelpers
-# end
+class FeatureTest < Minitest::Test
+  include Capybara::DSL
+  include TestHelpers
+end
