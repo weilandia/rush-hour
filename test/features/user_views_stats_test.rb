@@ -14,6 +14,10 @@ class UserViewsStatisticsTest < FeatureTest
 
     visit '/sources/jumpstartlab'
 
+    within 'h1' do
+      assert page.has_content?("Jumpstartlab")
+    end
+
     assert page.has_content?("Average response time")
     assert page.has_content?("20")
     assert page.has_content?("Resolutions")
@@ -24,7 +28,6 @@ class UserViewsStatisticsTest < FeatureTest
     assert page.has_content?("Chrome")
     assert page.has_content?("Request Types")
     assert page.has_content?("POST")
-
   end
 
 end

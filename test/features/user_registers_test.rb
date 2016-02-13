@@ -10,7 +10,11 @@ class UserRegistersTest < FeatureTest
     click_button('Join')
 
     visit '/sources/jumpstartlab'
-    assert page.has_content?("Jumpstartlab")
+
+    within 'h1' do
+      assert page.has_content?("Jumpstartlab")
+    end
+    
     assert page.has_content?("No payload data has been received for Jumpstartlab")
   end
 

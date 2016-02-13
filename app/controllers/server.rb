@@ -44,12 +44,8 @@ module RushHour
       end
     end
 
-    get '/errors' do
-      erb :user_errors
-    end
-
     not_found do
-    erb :error
+      erb :error
     end
   end
 

@@ -7,10 +7,10 @@
   </thead>
   <tbody>
     </tr>
-    <% @url.associated_verbs.each do |k, v| %>
+    <% @url.associated_verbs.each do |verb, count| %>
     <tr>
-      <td><%= k %></td>
-      <td class="text-right"><%= v %></td>
+      <td><%= verb %></td>
+      <td class="text-right"><%= count %></td>
     </tr>
     <% end %>
   </tbody>

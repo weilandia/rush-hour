@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @url.top_three_user_agents.each do |k, v| %>
+    <% @url.top_three_user_agents.each do |user_agent, count| %>
     <tr>
-      <td><%= "#{k[0]},  #{k[1]}" %></td>
-      <td class="text-right"><%= v %></td>
+      <td><%= "#{user_agent[0]},  #{user_agent[1]}" %></td>
+      <td class="text-right"><%= count %></td>
     </tr>
     <% end %>
   </tbody>

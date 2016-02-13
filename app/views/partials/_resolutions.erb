@@ -7,10 +7,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @client.resolutions.breakdown.each do |k, v| %>
+    <% @client.resolution_breakdown.each do |resolution, value| %>
       <tr>
-        <td><%= "#{k[0]} x #{k[1]}" %></td>
-        <td class="text-right"><%= v %></td>
+        <td><%= "#{resolution[0]} x #{resolution[1]}" %></td>
+        <td class="text-right"><%= value %></td>
       </tr>
     <% end %>
   </tbody>

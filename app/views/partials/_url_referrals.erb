@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @url.top_three_referrers.each do |k, v| %>
+    <% @url.top_three_referrers.each do |referrer, count| %>
     <tr>
-      <td><%= k %></td>
-      <td class="text-right"><%= v %></td>
+      <td><%= referrer %></td>
+      <td class="text-right"><%= count %></td>
     </tr>
     <% end %>
   </tbody>

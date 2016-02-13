@@ -28,10 +28,10 @@
   </thead>
   <tbody>
     </tr>
-    <% @url.response_times_ordered.each do |k, v| %>
+    <% @url.response_times_ordered.each do |response_time, count| %>
     <tr>
-      <td><%= k %></td>
-      <td class="text-right"><%= v %></td>
+      <td><%= response_time %></td>
+      <td class="text-right"><%= count %></td>
     </tr>
     <% end %>
   </tbody>

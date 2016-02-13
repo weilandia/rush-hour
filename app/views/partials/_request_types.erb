@@ -9,12 +9,12 @@
   <tbody>
     <tr>
       <td>Most frequent request type</td>
-      <td class="text-right"><%= @client.request_types.top %></td>
+      <td class="text-right"><%= @client.top_request_types %></td>
     </tr>
-    <% @client.request_types.all_verbs.each do |k, v| %>
+    <% @client.all_verbs.each do |verb, value| %>
       <tr>
-        <td><%= k %></td>
-        <td class="text-right"><%= v %></td>
+        <td><%= verb %></td>
+        <td class="text-right"><%= value %></td>
       </tr>
     <% end %>
   </tbody>

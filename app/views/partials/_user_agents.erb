@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @client.agents.browser_breakdown.each do |k, v| %>
+    <% @client.browser_breakdown.each do |browser, value| %>
       <tr>
-        <td><%= k %></td>
-        <td class="text-right"><%= v %></td>
+        <td><%= browser %></td>
+        <td class="text-right"><%= value %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,10 +24,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @client.agents.platform_breakdown.each do |k, v| %>
+    <% @client.platform_breakdown.each do |platform, value| %>
       <tr>
-        <td><%= k %></td>
-        <td class="text-right"><%= v %></td>
+        <td><%= platform %></td>
+        <td class="text-right"><%= value %></td>
       </tr>
     <% end %>
   </tbody>
