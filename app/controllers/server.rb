@@ -44,6 +44,16 @@ module RushHour
       end
     end
 
+    get '/sources/:client/events/:event' do
+      client = Client.find_by(identifier: params[:client])
+      @event = client.events.find_by(name: "#{params[:event]}")
+      if @event.nil?
+        erb :no_event
+      else
+        erb :event_statistics
+      end
+    end
+
     not_found do
       erb :error
     end

@@ -1,0 +1,16 @@
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <th>Event Stats</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @client.events.ordered_by_requested.each do |k, v| %>
+      <tr>
+        <td><a href="<%= @client.identifier %>/events/<%= k %>"><%= k %></a></td>
+        <td class="text-right"><%= v %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
