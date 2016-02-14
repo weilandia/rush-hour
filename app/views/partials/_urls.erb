@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @client.urls.ordered_by_requested.each do |k, v| %>
+    <% @client.order_urls.each do |url, frequency| %>
       <tr>
-        <td><a href="<%= @client.identifier %>/urls<%= URI(k).path %>"><%= k %></a></td>
-        <td class="text-right"><%= v %></td>
+        <td><a href="<%= @client.identifier %>/urls<%= URI(url).path %>"><%= url %></a></td>
+        <td class="text-right"><%= frequency %></td>
       </tr>
     <% end %>
   </tbody>

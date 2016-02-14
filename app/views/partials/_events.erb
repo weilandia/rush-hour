@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @client.events.ordered_by_requested.each do |k, v| %>
+    <% @client.order_events.each do |event, frequency| %>
       <tr>
-        <td><a href="<%= @client.identifier %>/events/<%= k %>"><%= k %></a></td>
-        <td class="text-right"><%= v %></td>
+        <td><a href="<%= @client.identifier %>/events/<%= event %>"><%= event %></a></td>
+        <td class="text-right"><%= frequency %></td>
       </tr>
     <% end %>
   </tbody>

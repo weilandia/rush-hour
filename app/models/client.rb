@@ -49,4 +49,12 @@ class Client < ActiveRecord::Base
     identifier.capitalize
   end
 
+  def order_events
+    events.ordered_by_requested
+  end
+
+  def order_urls
+    urls.ordered_by_requested
+  end
+
 end
