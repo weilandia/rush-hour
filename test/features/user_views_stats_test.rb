@@ -38,7 +38,7 @@ class UserViewsStatisticsTest < FeatureTest
     visit '/sources/hello'
 
     within 'h1' do
-      assert page.has_content?("New Client Signup")
+      assert page.has_content?("Join Us")
     end
   end
 

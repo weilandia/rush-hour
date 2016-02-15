@@ -1,7 +1,9 @@
 <body class="user">
-<%= erb :'partials/_nav_bar' %>
-<div class="jumbotron text-center">
+<%= erb :'partials/_data_nav_bar' %>
+<div class="data jumbotron text-center">
   <h1><%= @event.name %></h1>
 </div>
+<div class="container">
 <%= erb :'partials/_event_stats' %>
+</div>
 </body>
