@@ -8,7 +8,7 @@ class UserRegistersTest < FeatureTest
 
     fill_in('identifier', with: 'jumpstartlab')
     fill_in('rootUrl', with: 'http://jumpstartlab.com')
-    click_button('Login')
+    click_button('Join')
 
     visit '/sources/jumpstartlab'
 

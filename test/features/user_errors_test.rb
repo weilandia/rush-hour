@@ -7,12 +7,12 @@ class UserErrorsTest < FeatureTest
     visit '/sources/signup'
     fill_in('identifier', with: 'jumpstartlab')
     fill_in('rootUrl', with: 'http://jumpstartlab.com')
-    click_button('Login')
+    click_button('Join')
 
     visit '/sources/signup'
     fill_in('identifier', with: 'jumpstartlab')
     fill_in('rootUrl', with: 'http://jumpstartlab.com')
-    click_button('Login')
+    click_button('Join')
 
     assert_equal '/sources', current_path
     assert page.has_content?("Client jumpstartlab already exists.")
