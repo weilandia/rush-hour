@@ -31,5 +31,4 @@ class UserViewsStatisticsTest < FeatureTest
       assert page.has_content?("POST")
     end
   end
-
 end

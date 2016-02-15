@@ -24,5 +24,4 @@ class UserLogsInTest < FeatureTest
 
     assert page.has_content?("No payload data has been received for Jumpstartlab")
   end
-
 end

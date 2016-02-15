@@ -30,19 +30,5 @@ class UserViewsEventBreakdownTest < FeatureTest
     within 'h1' do
       assert page.has_content?("hello")
     end
-
   end
-
-  def test_no_payload_data_error_for_events
-    post '/sources', {identifier: "jumpstartlab", rootUrl: "http://jumpstartlab.com"}
-
-    visit '/sources/jumpstartlab/events/hello'
-
-    within 'h1' do
-      assert page.has_content?("jumpstartlab")
-    end
-    assert page.has_content?("No event data has been received for hello
-")
-  end
-
 end

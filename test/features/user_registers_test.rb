@@ -3,7 +3,6 @@ require_relative '../test_helper'
 class UserRegistersTest < FeatureTest
   include Rack::Test::Methods
 
-
   def test_index_path
     visit '/'
     within '#index' do
@@ -34,5 +33,4 @@ class UserRegistersTest < FeatureTest
 
     assert page.has_content?("No payload data has been received for Jumpstartlab")
   end
-
 end

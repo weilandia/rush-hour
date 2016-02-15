@@ -37,17 +37,4 @@ class UserViewsUrlStatisticsTest < FeatureTest
       assert page.has_content?("Chrome")
     end
   end
-
-  def test_no_payload_data_error_for_urls
-    post '/sources', {identifier: "jumpstartlab", rootUrl: "http://jumpstartlab.com"}
-
-
-    visit '/sources/jumpstartlab/urls/hello'
-
-    within 'h1' do
-      assert page.has_content?("jumpstartlab")
-    end
-    assert page.has_content?("No payload data has been received for hello")
-  end
-
 end
