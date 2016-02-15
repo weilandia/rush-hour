@@ -30,7 +30,5 @@ class UserRegistersTest < FeatureTest
     within 'h2' do
       assert page.has_content?("Thanks for joining us Jumpstartlab!")
     end
-
-    assert page.has_content?("No payload data has been received for Jumpstartlab")
   end
 end
