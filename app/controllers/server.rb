@@ -6,6 +6,10 @@ module RushHour
   class Server < Sinatra::Base
     include RegisterClient
 
+    get '/' do
+      erb :index
+    end
+
     post "/sources" do
       code, message = register_client(params)
       status code
