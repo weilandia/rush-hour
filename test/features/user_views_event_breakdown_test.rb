@@ -4,7 +4,6 @@ class UserViewsEventBreakdownTest < FeatureTest
   include Rack::Test::Methods
 
   def test_event_statistics
-    #event time is always 4-5 PM, why?
     post '/sources', {identifier: "jumpstartlab", rootUrl: "http://jumpstartlab.com"}
 
     post 'http://localhost:9393/sources/jumpstartlab/data', 'payload={"url":"http://jumpstartlab.com/blog","requestedAt":"2013-02-16 21:38:28 -0700","respondedIn":37,"referredBy":"http://jumpstartlab.com","requestType":"GET","parameters":[],"eventName":"socialLogin","userAgent":"Mozilla/5.0 (Macintosh%3B Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1309.0 Safari/537.17","resolutionWidth":"1920","resolutionHeight":"1280","ip":"63.29.38.211"}'
@@ -20,9 +19,11 @@ class UserViewsEventBreakdownTest < FeatureTest
       assert page.has_content?("socialLogin")
     end
 
-    assert page.has_content?("Hourly Breakdown")
-    assert page.has_content?("Total Hits")
-    assert page.has_content?("2")
+    within '.user' do
+      assert page.has_content?("Hourly Breakdown")
+      assert page.has_content?("Total Hits")
+      assert page.has_content?("2")
+    end
 
     visit '/sources/jumpstartlab/events/hello'
 

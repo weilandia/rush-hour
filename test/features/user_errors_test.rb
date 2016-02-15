@@ -18,22 +18,11 @@ class UserErrorsTest < FeatureTest
     assert page.has_content?("Client jumpstartlab already exists.")
   end
 
-  def test_random_path
+  def test_incorrect_path
     visit '/this_is_an_error'
 
     within 'h1' do
       assert page.has_content?("Error Page")
-    end
-  end
-
-  def test_index_path
-    visit '/'
-    within '#index' do
-      assert page.has_content?("RushHour")
-    end
-
-    within "#index-header" do
-      assert page.has_content?("Turning insights into actions.")
     end
   end
 
