@@ -10,6 +10,18 @@ module RushHour
       erb :index
     end
 
+    get '/login' do
+      erb :login
+    end
+
+    post '/login' do
+      redirect "/sources/#{params[:name]}"
+    end
+
+    get '/sources/signup' do
+      erb :signup
+    end
+
     post "/sources" do
       code, message = register_client(params)
       status code
