@@ -25,10 +25,10 @@ class UserRegistersTest < FeatureTest
     fill_in('rootUrl', with: 'http://jumpstartlab.com')
     click_button('Login')
 
-    visit '/sources/jumpstartlab' #redirect to sources right now
+    assert_equal '/sources', current_path
 
-    within 'h1' do
-      assert page.has_content?("Jumpstartlab")
+    within 'h2' do
+      assert page.has_content?("Thanks for joining us Jumpstartlab!")
     end
 
     assert page.has_content?("No payload data has been received for Jumpstartlab")
