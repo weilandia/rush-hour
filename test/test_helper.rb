@@ -48,6 +48,7 @@ module PayloadTestData
     @url_1 = Url.create({path: "http://jumpstartlab.com/blog", host: "jumpstartlab.com", relative_path: "blog"})
     @url_2 = Url.create({path: "http://jumpstartlab.com/exam", host: "jumpstartlab.com", relative_path: "exam"})
     @url_3 = Url.create({path: "http://jumpstartlab.com/home", host: "jumpstartlab.com", relative_path: "home"})
+    @url_4 = Url.create({path: "http://jumpstartlab.com/home"})
 
     @referral_1 = Referral.create({referral_path: "http://jumpstartlab.com/3"})
     @referral_2 = Referral.create({referral_path: "http://jumpstartlab.com/1"})

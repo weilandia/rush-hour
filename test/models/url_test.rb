@@ -4,6 +4,16 @@ class UrlTest < Minitest::Test
   include PayloadTestData
   include TestHelpers
 
+  # get '/sources/:client/urls/:relative_path' do
+  #   client = Client.find_by(identifier: params[:client])
+  #   @url = client.urls.find_by(relative_path: "/#{params[:relative_path]}")
+  #   if @url.nil?
+  #     erb :no_payload_for_path
+  #   else
+  #     erb :url_statistics
+  #   end
+  # end
+
   def setup
     gather_data
   end
@@ -43,4 +53,9 @@ class UrlTest < Minitest::Test
     result = Client.all[1].urls.ordered_by_requested
     assert_equal expected, result
   end
+
+  def test_nil_url
+    assert_equal nil, @url_4.max_response_time
+  end
+
 end
