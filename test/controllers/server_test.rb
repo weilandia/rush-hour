@@ -8,7 +8,6 @@ class CreateServerTest < Minitest::Test
     post '/sources', {identifier: "jumpstartlab", rootUrl: "http://jumpstartlab.com"}
     assert_equal 1, Client.count
     assert_equal 200, last_response.status
-    assert_equal "", last_response.body #last response is a rack thing
   end
 
   def test_no_identifier
@@ -32,7 +31,7 @@ class CreateServerTest < Minitest::Test
     post '/sources', {identifier: "jumpstartlab", rootUrl: "http://jumpstartlab.com"}
     assert_equal 1, Client.count
     assert_equal 403, last_response.status
-    assert_equal "Client jumpstartlab already exists.", last_response.body #last response is a rack thing
+    assert_equal "Client jumpstartlab already exists.", last_response.body
   end
 
   def test_payload_request_posts

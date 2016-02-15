@@ -26,7 +26,11 @@ module RushHour
       code, message = register_client(params)
       status code
       body message
-      redirect "/sources/#{params['identifier']}", status
+      if status == 403
+        body
+      elsif status == 200
+        erb :thanks
+      end
     end
 
     post '/sources/:client/data' do
