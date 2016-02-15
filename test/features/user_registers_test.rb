@@ -27,8 +27,8 @@ class UserRegistersTest < FeatureTest
 
     assert_equal '/sources', current_path
 
-    within 'h2' do
-      assert page.has_content?("Thanks for joining us Jumpstartlab!")
+    within '#thanks' do
+      assert page.has_content?("Thanks for joining us jumpstartlab!")
     end
   end
 end
