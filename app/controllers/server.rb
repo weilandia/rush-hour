@@ -1,10 +1,9 @@
-require 'json'
 require_relative '../lib/register_client'
 require_relative '../lib/build_payload'
-require 'digest/sha1'
+
 module RushHour
+
   class Server < Sinatra::Base
-    include RegisterClient
 
     get '/' do
       erb :index
@@ -23,9 +22,9 @@ module RushHour
     end
 
     post "/sources" do
-      code, message = register_client(params)
-      status code
-      body message
+      client = RegisterClient.new(params)
+      status client.code
+      body client.message
       if status == 403
         body
       elsif status == 200
@@ -78,6 +77,4 @@ module RushHour
       erb :error
     end
   end
-
-
 end

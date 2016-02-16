@@ -56,5 +56,4 @@ class Client < ActiveRecord::Base
   def order_urls
     urls.ordered_by_requested
   end
-
 end

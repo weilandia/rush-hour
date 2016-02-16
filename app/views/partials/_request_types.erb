@@ -1,22 +1,22 @@
 <div class='container'>
-<table class='table table-hover'>
-  <thead>
-    <tr>
-      <th>Request Types</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Most frequent request type</td>
-      <td class="text-right"><%= @client.top_request_types %></td>
-    </tr>
-    <% @client.all_verbs.each do |verb, value| %>
+  <table class='table table-hover'>
+    <thead>
       <tr>
-        <td><%= verb %></td>
-        <td class="text-right"><%= value %></td>
+        <th>Request Types</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Most frequent request type</td>
+        <td class="text-right"><%= @client.top_request_types %></td>
+      </tr>
+      <% @client.all_verbs.each do |verb, value| %>
+        <tr>
+          <td><%= verb %></td>
+          <td class="text-right"><%= value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

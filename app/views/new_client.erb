@@ -1,9 +1,9 @@
 <body class="user">
-<%= erb :'partials/_data_nav_bar' %>
-<div class="data jumbotron text-center">
-  <h1><%= @client.client_name %></h1>
-</div>
-<div class="container">
-  <h3><%= "No payload data has been received for #{@client.client_name}" %></h3>
-</div>
+  <%= erb :'partials/_nav_bar' %>
+  <div class="data jumbotron text-center">
+    <h1><%= @client.client_name %></h1>
+  </div>
+  <div class="container">
+    <h3><%= "No payload data has been received for #{@client.client_name}" %></h3>
+  </div>
 </body>

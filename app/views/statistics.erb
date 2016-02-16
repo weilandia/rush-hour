@@ -1,7 +1,7 @@
 <body class="user">
-<%= erb :'partials/_data_nav_bar' %>
-<div class="data jumbotron text-center">
-  <h1><%= @client.client_name %></h1>
-</div>
-<%= erb :'partials/_payload_stats' %>
+  <%= erb :'partials/_nav_bar' %>
+  <div class="data jumbotron text-center">
+    <h1><%= @client.client_name %></h1>
+  </div>
+  <%= erb :'partials/_payload_stats' %>
 </body>

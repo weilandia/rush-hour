@@ -1,6 +1,7 @@
 body {
   padding-top: 70px;
-  background-color: #2B2B2B; }
+  background-color: #2B2B2B;
+}
 
 .user {
   background-color: #fff;
@@ -15,7 +16,7 @@ body {
   color: #fff;
   background-color: #2B2B2B;
   border: none;
-  }
+}
 
 .navbar-brand {
   font-size: 200%;
@@ -29,7 +30,7 @@ body {
 
 #login {
   font-size: 50%;
-  font-weight: lighter;hub ;
+  font-weight: lighter;
 }
 
 #index-header {

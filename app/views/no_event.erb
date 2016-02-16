@@ -1,9 +1,10 @@
-<body>
-<%= erb :'partials/_nav_bar' %>
-<div class="jumbotron text-center">
-  <h1><%= "#{params[:client]}" %></h1>
-</div>
-
-  <h3>No event data has been received for <%= "#{params[:event]}" %></h3>
-  <h3><a href="<%= "/sources/#{params[:client]}" %>">Here's some other event data</a></h3>
+<body class="data">
+  <%= erb :'partials/_nav_bar' %>
+  <div class="data jumbotron text-center">
+    <h1><%= "#{params[:client]}" %></h1>
+  </div>
+  <div class="container">
+    <h3>No event data has been received for <%= "#{params[:event]}" %></h3>
+    <h3><a href="<%= "/sources/#{params[:client]}" %>">Here's some other event data</a></h3>
+  </div>
 </body>

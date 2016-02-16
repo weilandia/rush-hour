@@ -1,19 +1,19 @@
 <div class='container'>
-<table class='table table-hover'>
-  <thead>
-    <tr>
-      <th>Associated Verbs</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    </tr>
-    <% @url.associated_verbs.each do |verb, count| %>
-    <tr>
-      <td><%= verb %></td>
-      <td class="text-right"><%= count %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class='table table-hover'>
+    <thead>
+      <tr>
+        <th>Associated Verbs</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      </tr>
+      <% @url.associated_verbs.each do |verb, count| %>
+      <tr>
+        <td><%= verb %></td>
+        <td class="text-right"><%= count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

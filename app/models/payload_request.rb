@@ -9,7 +9,6 @@ class PayloadRequest < ActiveRecord::Base
 
   validates_presence_of :url_id, :referral_id, :requested_at, :responded_in, :request_type_id, :resolution_id, :ip, :agent_id, :client_id, :digest
 
-
   def self.avg_response_time
     average(:responded_in).round(2)
   end

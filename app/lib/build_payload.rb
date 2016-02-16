@@ -1,4 +1,6 @@
 require_relative '../lib/create_attributes'
+require 'digest/sha1'
+require 'json'
 
 class BuildPayload
   include CreateAttributes
@@ -13,12 +15,15 @@ class BuildPayload
   def build_payload(params)
     client = Client.find_by(identifier: params[:client])
     return no_client(params) unless client
+    
     raw_payload = JSON.parse(params[:payload])
-
     payload = payload_hash(raw_payload, client)
-
     request = client.payload_requests.new(payload)
 
+    identify_response(request, payload, client)
+  end
+
+  def identify_response(request, payload, client)
     if PayloadRequest.exists?(digest: payload["digest"])
       [403, "#{client.identifier.upcase}: payload already exists."]
     elsif request.save
