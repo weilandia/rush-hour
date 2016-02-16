@@ -8,7 +8,6 @@ class AgentTest < Minitest::Test
     gather_data
   end
 
-
   def test_agent_platform
     assert_equal "Macintosh", @agent.platform
   end

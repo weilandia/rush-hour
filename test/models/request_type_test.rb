@@ -8,7 +8,6 @@ class RequestTypeTest < Minitest::Test
     gather_data
   end
 
-
   def test_request_verb
     assert_equal "GET", RequestType.find(@request_type.id).verb
   end
