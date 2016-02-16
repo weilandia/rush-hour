@@ -24,6 +24,7 @@ body {
 }
 
 .sub-header {
+  float: right;
   font-size: 100%;
   font-weight: bold;
 }
